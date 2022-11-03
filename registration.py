@@ -3,6 +3,7 @@
 
 import main_page # опять импорт других файлов
 import DataBase
+import log_account
 
 import sys
 from PyQt5.QtCore import Qt 
@@ -17,16 +18,9 @@ def start():                                  # Как раз метод кот�
 		def __init__(self, **kwargs):
 			super().__init__()
 
-			self.register()
+			self.register()                                                          # на главную страницу
 
-		def after_press_register_registration(self, **kwargs):             # В дальнейшем будет отвечать за переход
-			pass                                                           # на главную страницу
-
-
-		def register(self):                                                # Как раз основной метод, в котором прописаны 
-			layout_main_register = QVBoxLayout() # лайаут             все виджеты
-
-
+		def register(self):                                                # Как раз основной метод, в котором прописаны все виджеты
 			label_register = QLabel("𝓓𝓮𝓑𝓸𝓻𝓽𝓮𝓴") # Работа с лейблом
 			label_register.setStyleSheet('font-size: 50px; color: white;')
 			layout_main_register.addWidget(label_register, alignment=Qt.AlignCenter)
@@ -51,23 +45,31 @@ def start():                                  # Как раз метод кот�
 			layout_main_register.addWidget(btn_register, alignment=Qt.AlignCenter)
 
 
-	if __name__ == '__main__':                           # опять запуск
-	    desktop = QtWidgets.QApplication.desktop()
-	    x = (desktop.width() - win_log_account.width()) // 2
-	    y = (desktop.height() - win_log_account.height()) // 2
-	    
-	    app_register = QApplication([])
-	    win_register = QWidget()
-	    win_register.showMaximized()
-	    win_register.showMinimized()
-	    win_register.resize(641, 480)
-	    win_register.move(x, y)
-	    win_register.setWindowTitle("𝓓𝓮𝓑𝓸𝓻𝓽𝓮𝓴")
-	    win_register.setObjectName("SecondWindow")
-	    win_register.setStyleSheet("#SecondWindow{background-color: #141414; max-width: 641; max-height: 480; min-width: 641; min_height: 480;}") # - цвет заднего фона
-	    app_register.setWindowIcon(QtGui.QIcon('img/logo_black.png'))
-	    win_register.setWindowIcon(QtGui.QIcon('img/logo_black.png'))
-	    win_register.setLayout(layout_main_register)
+		def after_press_register_registration(self, **kwargs):             # В дальнейшем будет отвечать за переход
+			pass 
 
-	    sys.exit(app_register.exec_())
-	    """ Сводка, тут всё тоже самое, только я не вызываю класс, т.к. это не нужно. """
+	def xy():
+		desktop = QtWidgets.QApplication.desktop()                # Узнаём центр экрана и позиционируем ПЕРВОЕ окно по центру.
+		x = (desktop.width() - win_register.width()) // 2      # В файле registration.py есть такой же кусочек кода
+		y = (desktop.height() - win_register.height()) // 2 
+
+		win_register.move(x, y) 
+
+	if __name__ == '__main__':                           # опять запуск
+		app_register = QApplication([])
+		win_register = QWidget()
+		win_register.showMinimized()
+		win_register.resize(641, 480)
+		win_register.setWindowTitle("𝓓𝓮𝓑𝓸𝓻𝓽𝓮𝓴")
+		win_register.setObjectName("SecondWindow")
+		win_register.setStyleSheet("#SecondWindow{background-color: #141414; max-width: 641; max-height: 480; min-width: 641; min-height: 480;}") # - цвет заднего фона
+		app_register.setWindowIcon(QtGui.QIcon('img/logo_black.png'))
+		win_register.setWindowIcon(QtGui.QIcon('img/logo_black.png'))
+
+		layout_main_register = QVBoxLayout() # лайаут 
+		win_register.setLayout(layout_main_register)
+
+		ex = Register()
+		sys.exit(app_register.exec_())
+
+start() # Запуск кода ОТДЕЛЬНО. УБРАТЬ ПРИ ЗАПУСКЕ В СВЯЗКЕ С ДРУГИМИ ФАЙЛАМИ !!!!!!!!!!!!!!!!!!!!!!!!!!!
