@@ -103,13 +103,13 @@ class Log_account(QWidget):         # Класс всего окна (можно
 
 
 if __name__ == '__main__': # Запуск программы
-    app_log_account = QApplication([])                        # Создал приложение
-    win_log_account = QWidget()                               # Создал само окно
-    win_log_account.showMinimized()                           # Сказал, что открыть в минимальном размере
-    win_log_account.resize(641, 480)                          # Указал сами размеры
+    app_log_account = QApplication([])                        ## Создал приложение
+    win_log_account = QWidget()                               ## Создал само окно
+    win_log_account.showMinimized()                           ## Сказал, что открыть в минимальном размере
+    win_log_account.resize(641, 480)                          ## Указал сами размеры
 
-    desktop = QtWidgets.QApplication.desktop()                # Узнаём центр экрана и позиционируем ПЕРВОЕ окно по центру.
-    x = (desktop.width() - win_log_account.width()) // 2      # В файле registration.py есть такой же кусочек кода
+    desktop = QtWidgets.QApplication.desktop()                ## Узнаём центр экрана и позиционируем ПЕРВОЕ окно по центру.
+    x = (desktop.width() - win_log_account.width()) // 2      ## В файле registration.py есть такой же кусочек кода
     y = (desktop.height() - win_log_account.height()) // 2    
     win_log_account.move(x, y)                                
 
