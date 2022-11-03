@@ -20,4 +20,9 @@ Messenger project. (Final project for grade 9)
 	shorturl.at/JS059
 	https://www.cyberforum.ru/python-graphics/thread2500287.html (документация PyQt5)
 	https://www.youtube.com/watch?v=R_AP62Fo30w
+	
+Патчи, релизы и апдейты:
+
+	__Path MVP 1.1__
+	
   
