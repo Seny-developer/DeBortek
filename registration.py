@@ -8,7 +8,7 @@ import log_account
 import sys
 from PyQt5.QtCore import Qt 
 from PyQt5.QtWidgets import *
-from PyQt5 import *                           # всё тоже самое
+from PyQt5 import *                           ## всё тоже самое
 from PyQt5.QtWinExtras import QtWin 
 from PyQt5.QtCore import pyqtSlot 
 
