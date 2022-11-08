@@ -44,7 +44,6 @@ class Register(QWidget):
 		btn_register.clicked.connect(self.after_press_register_registration)    # говорим ей про функцию выше
 		layout_main_register.addWidget(btn_register, alignment=Qt.AlignCenter)
 
-		win_register.setLayout(layout_main_register)
 
 	def after_press_register_registration(self, **kwargs):             # В дальнейшем будет отвечать за переход
 		pass 
@@ -66,6 +65,7 @@ if __name__ == '__main__':                           # опять запуск
 	win_register.setStyleSheet("#SecondWindow{background-color: #141414; max-width: 641; max-height: 480; min-width: 641; min-height: 480;}") # - цвет заднего фона
 	app_register.setWindowIcon(QtGui.QIcon('img/logo_black.png'))
 	win_register.setWindowIcon(QtGui.QIcon('img/logo_black.png'))
-
 	exc = Register()
+
+	win_register.setLayout(layout_main_register)
 	sys.exit(app_register.exec_())
