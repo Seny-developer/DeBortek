@@ -15,7 +15,7 @@ class mainpage(QWidget):
 	def __init__(self, **kwargs):
 			super().__init__()
 
-		self.page()
+		#self.page()
 
 	def page(self):
 		layout_mainpage = QVBoxLayout()
