@@ -27,7 +27,6 @@ if __name__ == '__main__':
 	app_mainpage = QApplication([])
 	win_mainpage = QWidget()
 	win_mainpage.showMaximized()
-	win_mainpage.showMinimized()
 	win_mainpage.resize(641, 480)
 	win_mainpage.move(x, y)
 	win_mainpage.setWindowTitle("𝓓𝓮𝓑𝓸𝓻𝓽𝓮𝓴")
